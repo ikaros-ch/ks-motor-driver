@@ -1,5 +1,5 @@
 
-## This an makecode extension for Ks0308 keyestudio Motor Drive Breakout Board
+## This is a makecode extension for Ks0308 keyestudio Motor Drive Breakout Board
 
 ## Use as Extension
 
