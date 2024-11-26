@@ -1,5 +1,5 @@
 
-> Open this page at [https://ikaros-ch.github.io/ks-motor-driver/](https://ikaros-ch.github.io/ks-motor-driver/)
+##This an makecode extension for Ks0308 keyestudio Motor Drive Breakout Board
 
 ## Use as Extension
 
