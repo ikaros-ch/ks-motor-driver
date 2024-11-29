@@ -32,7 +32,7 @@ namespace MotorControl {
         let forwardPin: DigitalPin;
         let backwardPin: DigitalPin;
 
-        if (motor === Motor.Motor1) {
+        if (motor === Motor.MotorA) {
             pwmPin = AnalogPin.P1;
             forwardPin = DigitalPin.P13;
             backwardPin = DigitalPin.P12;
@@ -59,16 +59,16 @@ namespace MotorControl {
             pins.analogWritePin(pwmPin, 0);
         }
     }
-    //% block="set Motor1 speed %speed1|and Motor2 speed %speed2"
+    //% block="set MotorA speed %speed1|and motorB speed %speed2"
     //% speed1.min=-100 speed1.max=100 speed2.min=-100 speed2.max=100
     export function controlBothMotors(speed1: number, speed2: number): void {
-        controlMotor(Motor.Motor1, speed1);
-        controlMotor(Motor.Motor2, speed2);
+        controlMotor(Motor.MotorA, speed1);
+        controlMotor(Motor.MotorB, speed2);
     }
 
     /**
      * Stop a motor
-     * @param motor the motor to stop (Motor1 or Motor2)
+     * @param motor the motor to stop (MotorA or motorB)
      */
     //% block="stop %motor"
     export function stopMotor(motor: Motor): void {
