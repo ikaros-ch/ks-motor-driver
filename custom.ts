@@ -1,20 +1,25 @@
-//% shim=toggleOnOff
-function toggleOnOff(): boolean {
-    return true; // Default value
-}
 
-enum Motor {
-    MotorA,
-    MotorB 
-}
-
-enum Direction {
-    Forward,
-    Backward
-}
 
 //% color=#0fbc11 icon="\uf085" block="Motor Control"
 namespace MotorControl {
+
+    
+        //% shim=toggleOnOff
+    function toggleOnOff(): boolean {
+        return true; // Default value
+    }
+    
+    export enum Motor {
+        MotorA,
+        MotorB 
+    }
+    
+    export enum Direction {
+        Forward,
+        Backward
+    }
+
+    
     //% block="Set motors to %state"
     //% state.shadow="toggleOnOff"
     export function setMotorState(state: boolean): void {
