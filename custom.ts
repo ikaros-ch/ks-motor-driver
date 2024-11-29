@@ -3,29 +3,29 @@
 //% color=#0fbc11 icon="\uf085" block="Motor Control"
 namespace MotorControl {
 
-    
-        //% shim=toggleOnOff
+
+    //% shim=toggleOnOff
     function toggleOnOff(): boolean {
         return true; // Default value
     }
-    
+
     export enum Motor {
         MotorA,
-        MotorB 
+        MotorB
     }
-    
+
     export enum Direction {
         Forward,
         Backward
     }
 
-    
+
     //% block="Set motors to %state"
     //% state.shadow="toggleOnOff"
     export function setMotorState(state: boolean): void {
         pins.digitalWritePin(DigitalPin.P14, state ? 1 : 0);
     }
-     //% block="set %motor|speed %speed"
+    //% block="set %motor|speed %speed"
     //% speed.min=-100 speed.max=100
     export function controlMotor(motor: Motor, speed: number): void {
         let pwmPin: AnalogPin;
