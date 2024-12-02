@@ -33,11 +33,11 @@ namespace MotorControl {
         let backwardPin: DigitalPin;
 
         if (motor === Motor.MotorA) {
-            pwmPin = AnalogPin.P1;
+            pwmPin = P1;
             forwardPin = DigitalPin.P13;
             backwardPin = DigitalPin.P12;
         } else {
-            pwmPin = AnalogPin.P2;
+            pwmPin = P2;
             forwardPin = DigitalPin.P15;
             backwardPin = DigitalPin.P16;
         }
@@ -46,17 +46,17 @@ namespace MotorControl {
             // Forward
             pins.digitalWritePin(forwardPin, 1);
             pins.digitalWritePin(backwardPin, 0);
-            pins.analogWritePin(pwmPin, Math.map(speed, 0, 100, 0, 1023));
+            pins.analogWritePin(AnalogPin.pwmPin, Math.map(speed, 0, 100, 0, 1023));
         } else if (speed < 0) {
             // Backward
             pins.digitalWritePin(forwardPin, 0);
             pins.digitalWritePin(backwardPin, 1);
-            pins.analogWritePin(pwmPin, Math.map(-speed, 0, 100, 0, 1023));
+            pins.analogWritePin(AnalogPin.pwmPin, Math.map(-speed, 0, 100, 0, 1023));
         } else {
             // Stop
             pins.digitalWritePin(forwardPin, 0);
             pins.digitalWritePin(backwardPin, 0);
-            pins.analogWritePin(pwmPin, 0);
+            pins.analogWritePin(AnalogPin.pwmPin, 0);
         }
     }
     //% block="set MotorA speed %speed1|and motorB speed %speed2"
