@@ -33,11 +33,11 @@ namespace MotorControl {
         let backwardPin: DigitalPin;
 
         if (motor === Motor.MotorA) {
-            pwmPin = AnalogPin.P0;
+            pwmPin = AnalogPin.P1;
             forwardPin = DigitalPin.P13;
             backwardPin = DigitalPin.P12;
         } else {
-            pwmPin = AnalogPin.P1;
+            pwmPin = AnalogPin.P2;
             forwardPin = DigitalPin.P15;
             backwardPin = DigitalPin.P16;
         }
@@ -75,9 +75,9 @@ namespace MotorControl {
         let pwmPin: AnalogPin;
 
         if (motor === Motor.MotorA) {
-            pwmPin = AnalogPin.P0;
-        } else {
             pwmPin = AnalogPin.P1;
+        } else {
+            pwmPin = AnalogPin.P2;
         }
 
         pins.analogWritePin(pwmPin, 0); // Set PWM to 0 to stop motor
